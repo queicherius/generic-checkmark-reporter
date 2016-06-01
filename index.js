@@ -79,9 +79,9 @@ function logError (failure, index) {
   // Log the actual error message + stack trace, and
   // show usable diffs for assertions
   var error = failure.error
-  log('    ' + error.message.red + '\n')
+  log('     ' + error.message.red + '\n')
   if (error.stack) {
-    log('\n    ' + error.stack.grey + '\n')
+    log('\n     ' + error.stack.grey + '\n')
   }
 }
 
