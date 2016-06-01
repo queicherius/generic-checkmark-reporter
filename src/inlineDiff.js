@@ -32,7 +32,7 @@ function lineNumbers (lines) {
   var width = String(lines.length).length
 
   return lines.map(function (str, i) {
-    return pad(++i, width) + ' |' + ' ' + str;
+    return pad(++i, width) + ' |' + ' ' + str
   })
 }
 
