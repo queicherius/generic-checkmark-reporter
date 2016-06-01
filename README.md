@@ -1,7 +1,8 @@
 # generic-checkmark-reporter
 
-Test reporter that prints small but useful results to console. For usage
-across different testing frameworks, to keep the output consistent.
+Test reporter that prints small but useful results to console.
+Keeps the output consistent across different testing frameworks.
+Supports diffing and smart error messages.
 
 ![](screenshot.png)
 
