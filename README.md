@@ -16,8 +16,8 @@ Supports diffing and smart error messages.
 ```js
 var genericReporter = require('generic-checkmark-reporter')
 
-// Function to call at the start of the test run, 
-// with an optional output function (e.g. console.log)
+// Function to call at the start of the test run, with an
+// optional output function (defaults to process.stdout.write)
 genericReporter.start(outputFunction)
 
 // Function to call to report a single spec result
