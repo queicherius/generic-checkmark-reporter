@@ -42,7 +42,7 @@ function end () {
 
   log('\n\n')
   log('  ' + SYMBOLS.success + ' ' + (stats.success + ' passing ').green)
-  log('(' + diff + 'ms)'.grey)
+  log(('(' + diff + 'ms)').grey)
 
   if (stats.skipped) {
     log('\n  ' + SYMBOLS.skipped + ' ' + (stats.skipped + ' pending').cyan)
@@ -71,7 +71,7 @@ function logError (failure, index) {
   log('  ' + index + ') ' + failure.description + ': ')
 
   if (failure.environment) {
-    log('(' + failure.environment + ')'.grey)
+    log(('(' + failure.environment + ')').grey)
   }
 
   log('\n\n')
