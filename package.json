@@ -1,0 +1,22 @@
+{
+  "name": "generic-checkmark-reporter",
+  "version": "0.0.1",
+  "description": "Test reporter, that prints small but useful results to console.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/queicherius/generic-checkmark-reporter.git"
+  },
+  "keywords": [
+    "reporter"
+  ],
+  "author": "queicherius@gmail.com",
+  "dependencies": {
+    "colors": "~0.6.0"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ]
+}
