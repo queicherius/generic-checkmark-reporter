@@ -55,7 +55,6 @@ function end () {
     // Log all accumulated errors
     log('\n\n')
     failures.forEach(logError)
-    log('\n')
   }
 
   log('\n\n')
@@ -77,23 +76,35 @@ function logError (failure, index) {
 
   log('\n\n')
 
-  // Log the actual error message + stack trace, and
-  // show usable diffs for assertions
-  var error = formatError(failure.error)
-  if (error.message && error.message !== '') {
+  // Log the actual error message / stack trace / diffs
+  var intend = 4 + String(index).length
+  var error = formatError(failure.error, intend)
+
+  if (!_empty(error.message)) {
     log(error.message + '\n')
   }
-  if (error.stack && error.stack !== '') {
-    log('\n' + error.stack + '\n')
+
+  if (!_empty(error.stack)) {
+    log('\n' + error.stack.grey + '\n')
   }
 }
 
+// Check if a string is empty
+function _empty (str) {
+  if (!str) {
+    return true
+  }
+
+  str = str.trim()
+  return str.length === 0
+}
+
 // Try and extract the best error message / stacktrace and generate inline diffs
-function formatError (error) {
+function formatError (error, intend) {
   var message
 
   // Get the error message based on the error
-  var errorMessage = ''
+  var errorMessage = 'NO ERROR MESSAGE FOUND'
   if (error.message && typeof error.message.toString === 'function') {
     errorMessage = error.message + ''
   }
@@ -133,20 +144,22 @@ function formatError (error) {
   }
 
   return {
-    message: intendLines(message),
-    stack: intendLines(stack, true).grey
+    message: intendLines(message, false, intend),
+    stack: intendLines(stack, true, intend)
   }
 }
 
 // Intend every line of a string
-function intendLines (string, trim) {
+function intendLines (string, trim, intend) {
+  var intendStr = new Array(intend + 1).join(' ')
+
   return string
     .split('\n')
     .map(function (s) {
       return trim ? s.trim() : s
     })
     .join('\n')
-    .replace(/^/gm, '     ')
+    .replace(/^/gm, intendStr)
 }
 
 // Check if two variables have the same type
