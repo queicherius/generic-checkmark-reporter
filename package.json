@@ -1,6 +1,6 @@
 {
   "name": "generic-checkmark-reporter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Test reporter, that prints small but useful results to console.",
   "main": "index.js",
   "scripts": {},
