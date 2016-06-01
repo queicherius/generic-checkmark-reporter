@@ -18,11 +18,11 @@ function inlineDiff (actual, expected) {
 
 function mapColor (str) {
   if (str.added) {
-    return str.value.red
+    return str.value.green
   }
 
   if (str.removed) {
-    return str.value.green
+    return str.value.red
   }
 
   return str.value
