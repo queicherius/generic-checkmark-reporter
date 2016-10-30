@@ -15,7 +15,7 @@
   ],
   "author": "queicherius@gmail.com",
   "dependencies": {
-    "colors": "~0.6.0"
+    "colors": "~1.1.2"
   },
   "license": "MIT",
   "files": [
